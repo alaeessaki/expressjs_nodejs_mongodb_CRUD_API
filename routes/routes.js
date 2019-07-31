@@ -2,11 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const Contact = require('../models/contacts');
+const Test = require('../models/test');
 
 // retrieving contacts
 router.get('/contacts', (req,res, next)=>{
     Contact.find(function(err, contacts){
         res.json(contacts);
+    })
+})
+router.get('/test', (req,res, next)=>{
+    Test.find(function(err, test){
+        res.json(test);
     })
 })
 
